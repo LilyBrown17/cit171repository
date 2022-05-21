@@ -49,11 +49,11 @@ function checkexpiredtoken(token){
 
 function userlogin(){
     setuserpassword();
-    setusername();
+
     $.ajax({
         type: 'POST',
-        url: '/login',
-        data: JSON.stringify({userName, password}),
+        url: 'https://dev.stedi.me/twofactorlogin',
+        data: JSON.stringify({phonenumber, password}),
         success: function(data) {
             window.location.href = "/timer.html#"+data;//add the token to the url
         },
